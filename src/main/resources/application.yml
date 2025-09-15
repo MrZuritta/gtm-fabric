@@ -1,0 +1,18 @@
+gcp:
+  project-id: angular-theorem-471115-d0
+
+  credentials:
+    bundles:
+      writer-all:
+        provides: [BIGQUERY_WRITE, FIRESTORE_RW]
+
+        # Ruta en el host (tu máquina). Como lo tienes en resources, al ejecutar en IDE
+        # la ruta real es algo como src/main/resources/secret.json
+        hostPath: ${GCP_SA_WRITER:${PWD}/src/main/resources/secret.json}
+
+        # Ruta dentro del contenedor (cuando Docker lo monte, si corres en contenedor)
+        containerPath: /var/run/creds/sa-writer.json
+
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: /var/run/creds/sa-writer.json
+          GOOGLE_CLOUD_PROJECT: ${gcp.project-id}
