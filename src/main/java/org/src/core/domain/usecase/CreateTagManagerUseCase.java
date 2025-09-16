@@ -1,24 +1,18 @@
 package org.src.core.domain.usecase;
 
+import lombok.RequiredArgsConstructor;
 import org.src.core.domain.model.TagManager.ContainerData;
-import org.src.core.domain.model.TagManager.TagManager;
-import org.src.core.domain.port.out.MessageReadRepositoryPort;
-import org.src.core.domain.port.out.TagManagerReadPort;
+import org.src.core.domain.model.TagManager.RegisteredTagManager;
+import org.src.core.domain.port.out.TagManagerWritePort;
 
-import java.util.Base64;
-
+@RequiredArgsConstructor
 public class CreateTagManagerUseCase {
 
-    private final TagManagerReadPort tagManagerReadPort;
-    private final MessageReadRepositoryPort.TagManagerWritePort tagManagerWritePort;
+    private final TagManagerWritePort tagManagerWritePort;
 
-    public CreateTagManagerUseCase(TagManagerReadPort tagManagerReadPort, MessageReadRepositoryPort.TagManagerWritePort tagManagerWritePort) {
-        this.tagManagerReadPort = tagManagerReadPort;
-        this.tagManagerWritePort = tagManagerWritePort;
+    public RegisteredTagManager create(ContainerData containerData) {
+        return RegisteredTagManager.builder()
     }
 
-    public TagManager create(ContainerData containerData) {
-        return tagManagerWritePort.createAndStart();
-    }
 
 }

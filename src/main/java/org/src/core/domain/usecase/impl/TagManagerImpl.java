@@ -1,11 +1,9 @@
 package org.src.core.domain.usecase.impl;
 
 import org.src.core.domain.model.TagManager.ContainerData;
-import org.src.core.domain.model.TagManager.TagManager;
+import org.src.core.domain.model.TagManager.RegisteredTagManager;
 import org.src.core.domain.port.in.TagManagerUseCase;
 import org.src.core.domain.usecase.CreateTagManagerUseCase;
-
-import java.util.Base64;
 
 public class TagManagerImpl implements TagManagerUseCase {
 
@@ -16,7 +14,7 @@ public class TagManagerImpl implements TagManagerUseCase {
     }
 
     @Override
-    public TagManager create(ContainerData containerData) {
+    public RegisteredTagManager create(ContainerData containerData) {
         return createTagManagerUseCase.create(containerData);
     }
 }

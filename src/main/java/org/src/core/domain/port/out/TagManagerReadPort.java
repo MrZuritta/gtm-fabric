@@ -5,5 +5,5 @@ import org.src.core.domain.model.TagManager.ContainerData;
 import java.util.Optional;
 
 public interface TagManagerReadPort {
-    Optional<ContainerData> findByName(String name);
+//    Optional<ContainerData> findByName(String name);
 }

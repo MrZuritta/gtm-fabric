@@ -16,7 +16,7 @@ public class ContainerData {
     String name;
     String image;
     Status status;
-    Base64 containerConfig;
+    String containerConfig;
     Integer workspace;
     Integer vm;
     Integer creator;

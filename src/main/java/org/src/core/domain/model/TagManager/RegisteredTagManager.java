@@ -14,7 +14,7 @@ import java.util.Set;
 @Value
 @Builder
 @With
-public class TagManager {
+public class RegisteredTagManager {
     @NonNull Integer tenantId;
     @NonNull Integer id;
     @NonNull String name;

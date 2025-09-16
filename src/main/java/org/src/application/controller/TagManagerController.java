@@ -21,7 +21,7 @@ public class TagManagerController {
     private final TagManagerUseCase tagManagerUseCase;
     private final CreateTagManagerDTOConverter createTagManagerDTOConverter;
 
-        @PostMapping("/containers")
+        @PostMapping
         public ResponseEntity<ContainerData> createContainer(@RequestBody CreateTagManagerRequest request) {
             tagManagerUseCase.create(createTagManagerDTOConverter.toContainerData(request));
             return ResponseEntity.noContent().build();
